@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>Lesson 02</title>
+
+    <link rel="stylesheet" href="../dist/reset.css" />
+    <link rel="stylesheet" href="../dist/reveal.css" />
+    <link rel="stylesheet" href="../dist/theme/sky.css" />
+    <link rel="stylesheet" href="../custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../plugin/highlight/monokai.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <div class="title-slide">
+            <h1>React Essentials</h1>
+          </div>
+        </section>
+
+        <section>
+          <h2>What is React?</h2>
+          <ul>
+            <li class="fragment">
+              Component-based Liberary for building user interfaces
+            </li>
+            <li class="fragment">
+              Manages the state of applications efficiently
+            </li>
+            <li class="fragment">
+              Developed and maintained by Meta Inc (formerly Facebook)
+            </li>
+            <li class="fragment">
+              Open-source and widely adopted in the web development community
+            </li>
+          </ul>
+          <aside class="notes">
+            <h2>Notes</h2>
+            <p>
+              React is a JavaScript library for building user interfaces. It
+              allows developers to create reusable UI components and manage the
+              state of their applications efficiently.
+            </p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Why Use React?</h2>
+          <ul>
+            <li class="fragment"><strong>Fast: </strong>Virtual DOM</li>
+            <li class="fragment">Large community support (Open source)</li>
+            <li class="fragment">
+              Easy to create Single Page Applications (SPAs)
+            </li>
+          </ul>
+          <aside class="notes">
+            <h2>Notes</h2>
+            <p>
+              React's declarative syntax makes it easy to understand and predict
+              how the UI will look at any given time. The component-based
+              architecture allows for better code organization and reusability.
+            </p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Hello React!</h2>
+          <p>
+            Try yourself here:
+            <a href="https://codesandbox.io/s/ckjwfc" target="_blank"
+              >Hello React!</a
+            >
+            on codeSandbox
+          </p>
+          <p>Update the page to display an un-ordered list of your favourite fruits.</p>
+
+          <aside class="notes">
+            <h2>Notes</h2>
+            <p>
+              This is a simple React application that renders "Hello React!" on
+              the screen.
+            </p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>React Rendering</h2>
+          Instead of:
+          <pre>
+            <code data-trim>
+              React.createElement(
+                'ul',
+                null,
+                React.createElement('li', null, 'Apple'),
+                React.createElement('li', null, 'Banana'),
+              )
+            </code>
+          </pre>
+          We would prefer:
+          <pre>
+            <code data-trim>
+              <ul>
+                  <li>Apple</li>
+                  <li>Banana</li>
+              </ul>
+            </code>
+          </pre>
+          <p><span style="color: red"">JSX </span>is a syntax that allows us to embed HTML in JavaScript.</p>
+        </section>
+
+        <section>
+          <h2>JSX and Transpiling</h2>
+          <p>Babel Transpiler is a tool that converts JSX code into JavaScript code.</p>
+          <a href="https://babeljs.io/repl" target="_blank"
+            >Try Babel Transpiler</a
+          >
+          <p>
+            Try yourself here:
+            <a href="https://codesandbox.io/s/8ykpfv" target="_blank"
+              >JSX on codeSandbox</a
+            >
+            on codeSandbox
+          </p>
+          <aside class="notes">
+            <h2>Notes</h2>
+            <p>
+              JSX is a syntax extension for JavaScript that looks similar to
+              HTML. It allows developers to write HTML-like code within their
+              JavaScript files, making it easier to create and manage UI
+              components.
+            </p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>React Components</h2>
+          <ul>
+            <li class="fragment">Basic building blocks of React applications</li>
+            <li class="fragment">
+              Every piece of UI is a component
+            </li>
+            <li class="fragment">
+              Components can be nested inside other components
+            </li>
+            <li class="fragment">
+              Define components using functions or classes (Functional and Class components)
+            </li>
+            <li class="fragment">
+              Since React 16.8, functional components are preferred (we will use functional components only)
+            </li>
+          </ul>
+         
+        </section>
+
+        <section>
+          <h2>Components in a Website</h2>
+           <img style="width: 750px; height: auto" class="fragment" src="./images/components.png" alt="React Components" />
+          <p class="fragment">
+            Try it on codeSandbox:
+            <a href="https://codesandbox.io/p/sandbox/n7hqht" target="_blank"
+              >Our First Component</a
+            >
+          </p>
+        </section>
+        
+        <!-- End of slides -->
+      </div>
+    </div>
+
+    <script src="../dist/reveal.js"></script>
+    <script src="../plugin/notes/notes.js"></script>
+    <script src="../plugin/markdown/markdown.js"></script>
+    <script src="../plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
+</html>
