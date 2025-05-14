@@ -4,7 +4,13 @@
  * By Hakim El Hattab, http://hakim.se
  */
 @import url(./fonts/source-sans-pro/source-sans-pro.css);
-section.has-light-background, section.has-light-background h1, section.has-light-background h2, section.has-light-background h3, section.has-light-background h4, section.has-light-background h5, section.has-light-background h6 {
+section.has-light-background,
+section.has-light-background h1,
+section.has-light-background h2,
+section.has-light-background h3,
+section.has-light-background h4,
+section.has-light-background h5,
+section.has-light-background h6 {
   color: #222;
 }
 
@@ -26,9 +32,9 @@ section.has-light-background, section.has-light-background h1, section.has-light
   --r-heading-text-shadow: none;
   --r-heading-font-weight: 600;
   --r-heading1-text-shadow: none;
-  --r-heading1-size: 2.5em;
-  --r-heading2-size: 1.6em;
-  --r-heading3-size: 1.3em;
+  --r-heading1-size: 2em;
+  --r-heading2-size: 1.4em;
+  --r-heading3-size: 1.2em;
   --r-heading4-size: 1em;
   --r-code-font: monospace;
   --r-link-color: #42affa;
@@ -257,13 +263,13 @@ section.has-light-background, section.has-light-background h1, section.has-light
   border-bottom: 1px solid;
 }
 
-.reveal table th[align=center],
-.reveal table td[align=center] {
+.reveal table th[align="center"],
+.reveal table td[align="center"] {
   text-align: center;
 }
 
-.reveal table th[align=right],
-.reveal table td[align=right] {
+.reveal table th[align="right"],
+.reveal table td[align="right"] {
   text-align: right;
 }
 

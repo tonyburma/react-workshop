@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="../dist/reset.css" />
+    <link rel="stylesheet" href="../dist/reveal.css" />
+    <link rel="stylesheet" href="../dist/theme/sky.css" />
+    <link rel="stylesheet" href="../custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../plugin/highlight/monokai.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <div class="title-slide">
+            <h1>JavaScript for Front-End Development</h1>
+          </div>
+        </section>
+
+        <section>
+          <h2>Variable Declaration and Assignment</h2>
+          <ul class="fragment">
+            <li class="fragment">var</li>
+            <li class="fragment">let</li>
+            <li class="fragment">const</li>
+          </ul>
+          <pre class="fragment">
+            <code class="javascript" data-trim>
+              let name = "Alice";     // can be reassigned
+              const age = 25;         // cannot be reassigned
+              var city = "New York";  // function-scoped (older style)
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>Variable Declaration and Assignment</h2>
+          <h5>Dynamic Typing in JavaScript</h5>
+          <pre class="fragment">
+						<code class="javascript" data-trim>
+							let a = 5;
+							console.log(a + " " + typeof a); //5 number
+							
+							a = "Hello";
+							console.log(a + " " + typeof a); //Hello string
+						</code>
+					</pre>
+        </section>
+
+        <section>
+          <h2>Variable Declaration and Assignment</h2>
+          <h5>Data Types</h5>
+          <p>
+            JS has 7 primitive data types:
+          </p>
+          <ul>
+            <li>Number</li>
+            <li>String</li>
+            <li>Boolean</li>
+            <li>Undefined</li>
+            <li>Null</li>
+            <li>Symbol (ES6)</li>
+            <li>BigInt (ES11)</li>
+          </ul>
+          <!-- <pre class="fragment">
+            <code class="javascript" data-trim>
+              let sym = Symbol("description");
+              let big = BigInt(123456789012345678901234567890);
+              console.log(sym + " " + typeof sym); // Symbol string
+              console.log(big + " " + typeof big); // 123456789012345678901234567890 bigint
+            </code>
+          </pre> -->
+        </section>
+
+        <section>
+          <h2>Variable Declaration and Assignment</h2>
+          <h5>String</h5>
+          <p>
+            Enclosed in single or double quotes. Can use template literals
+            (backticks) for multi-line strings and string interpolation.
+          </p>
+
+          <pre class="fragment">
+						<code class="javascript" data-trim>
+							let str1 = "Hello";
+							let str2 = 'World';
+							let str3 = `Hello ${str2}`;
+							console.log(str3); // Hello World
+						</code>
+					</pre>
+        </section>
+
+        <section>
+          <h2>Variable Declaration and Assignment</h2>
+          <h5>undefined vs null vs not defined</h5>
+          <p>
+            <b>undefined</b>: variable declared but not assigned a value.
+            <br />
+            <b>null</b>: variable explicitly assigned no value.
+            <br />
+            <b>not defined</b>: variable not declared at all.
+          </p>
+          <pre class="fragment">
+						<code class="javascript" data-trim>
+							let b; // undefined - declared but not assigned
+							console.log(typeof b); // undefined
+
+							let c = null; // null - explicitly assigned no value
+							console.log(typeof c); // object (object type but the value is 'null') (this is a quirk in JS)
+
+							console.log(typeof d); // Error: d is not defined
+              </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>Try It Out</h2>
+          <pre class="fragment">
+            <code class="javascript" data-trim>
+              // Try on Developer console
+              typeof 1;
+              typeof 1.5;
+              1 / 0; // Infinity
+              typeof (1 / 0);
+              typeof "Tom";
+              typeof true;
+              typeof { name: "John" };
+              typeof [1, 2, 3];
+              typeof new Date();
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>Type Coercion</h2>
+          <p>
+            JavaScript automatically converts types when needed. This is called
+            type coercion. (kōˈərSH(ə)n)
+          </p>
+          <pre class="fragment">
+            <code class="javascript" data-trim>
+              1 + true; // 2
+
+              1 + "1"; // "11"
+
+              console.log("2" == 2); // true
+
+              1 / "10"; // 0.1
+
+              "10" * "2"; // 20
+
+              10 * 'a'; // NaN
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>Comparison</h2>
+          <p>JavaScript provides several operators for comparison.</p>
+          <pre class="fragment">
+            <code class="javascript" data-trim>
+              console.log("2" == 2); // true
+              console.log("2" === 2); // false (strict comparison)
+              console.log("2" != 2); // false
+              console.log("2" !== 2); // true (strict comparison)
+              console.log("2" > 2); // false
+              console.log("2" < 2); // false
+              console.log("2" >= 2); // true
+              console.log("2" <= 2); // true
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>Functions</h2>
+          <h5>Declaration</h5>
+          <p>
+            Functions are first-class objects in JavaScript. They can be
+            assigned to variables, passed as arguments, and returned from other
+            functions.
+          </p>
+          
+          <pre class="fragment">
+            <code class="javascript" data-trim>
+              // Named function
+              function add(a, b) {
+                return a + b;
+              }
+
+              let sum = add(2, 3);
+              console.log(sum); // 5
+
+              // Anonymous function
+              const multiply = function(a, b) {
+                return a * b;
+              };
+              let product = multiply(2, 3);
+              console.log(product); // 6
+              
+            </code>
+          </pre>
+        </section>
+
+       
+
+        <section>
+          <h2>Functions</h2>
+          <h5>Arrow Function</h5>
+          <pre class="fragment">
+            <code class="javascript" data-trim>
+              // Anonymous function
+              const add = function(a, b) {
+                return a + b;
+              }
+
+              // Arrow function 
+              const add = (a, b) => {
+                return a + b;
+              };
+
+              // Shorter syntac 
+              const add = (a, b) => a + b;
+
+              let sum = add(2, 3);
+              console.log(sum); // 5
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>Objects</h2>
+          <ul class="fragment">
+            <li class="fragment">
+              JS is a multi-paradigm language. It supports object-oriented,
+              functional, and imperative programming styles.
+            </li>
+            <li class="fragment">
+              Possible to create objects using the "new" keyword or using
+              object literals.
+            </li>
+            <li class="fragment">Object definition (class) is defined using functions</li>
+            <li class="fragment">
+              "this" keyword can be used to assign instance variables.
+            </li>
+        </section>
+
+        <section>
+          <h2>Objects</h2>
+          <h5>Object Definition (class)</h5>
+          <pre class="fragment">
+            <code class="javascript" data-trim>
+              // Build-in object
+              console.log(new Date()); // current date and time 
+
+              // Class definition
+              function Person(name, age) {
+                this.name = name;
+                this.age = age;
+              }
+
+              const alice = new Person("Alice", 25);
+              console.log(typeof alice); // object
+              console.log(alice instanceof Person); // true
+
+              // Try it Out
+              const alice1 = new Person("Alice", 25);
+              console.log(typeof alice1); 
+            </code>
+          </pre>
+          <aside class="notes">
+            <p>
+              Arrow functions do not have their own "this" context. So we cannot use 
+              arrow functions to define a class. 
+            </p>
+          </aside>
+        </section>
+
+        <section>
+          <h2>Objects</h2>
+          <h5>Object Literals</h5>
+          <pre class="fragment">
+            <code class="javascript" data-trim>
+              const alice = {
+                name: "Alice",
+                age: 25,
+                greet: function() {
+                  console.log("Hello, my name is " + this.name);
+                }
+              };
+
+              console.log(typeof alice); // object
+              alice.greet(); // Hello, my name is Alice
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>Arrays</h2>
+          <ul class="fragment">
+            <li class="fragment">
+              Create array using "new Array()"" or Array Literal.
+            </li>
+            <li class="fragment">
+              An array can consist of different types.
+            </li>
+          </ul>
+          <pre class="fragment">
+            <code class="javascript" data-trim>
+              const arr1 = new Array(1, 2, 3);
+              const arr2 = [1, "two", true, null];
+
+              console.log(arr1); // [1, 2, 3]
+              console.log(arr2); // [1, "two", true, null]
+              console.log(typeof arr1); // object
+              console.log(typeof arr2); // object
+              console.log(Array.isArray(arr1)); // true
+              console.log(Array.isArray(arr2)); // true
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>Add Items to Arrays</h2>
+          <ul class="fragment">
+            <li class="fragment">push() - add to the end</li>
+            <li class="fragment">unshift() - add to the beginning</li>
+            <li class="fragment">splice() - add at a specific index</li>
+            <li class="fragment">concat() - merge two arrays</li>
+            <li class="fragment">spread operator - merge two arrays</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Remove Items from Arrays</h2>
+          <ul class="fragment">
+            <li class="fragment">pop() - remove from the end</li>
+            <li class="fragment">shift() - remove from the beginning</li>
+            <li class="fragment">splice() - remove at a specific index</li>
+            <li class="fragment">slice() - create a new array with a portion of the original array</li>
+            <li class="fragment">filter() - create a new array with elements that pass a test</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Commonly Used Array Methods</h2>
+          <ul class="fragment">
+            <li class="fragment">forEach( ) - iterate over each element</li>
+            <li class="fragment">map( ) - create a new array with the results of calling a function on each element</li>
+            <li class="fragment">filter( ) - create a new array with elements that pass a test</li>
+            <li class="fragment">find( ) - return the first element that satisfies the provided testing function</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>forEach( )</h2>
+          <p>
+            The forEach() method executes a provided function once for each
+            array element.
+          </p>
+          <pre class="fragment">
+            <code class="javascript" data-trim>
+              const numbers = [1, 2, 3, 4, 5];
+              numbers.forEach(function(number) {
+                console.log(number);
+              });
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>map( )</h2>
+          <p>
+            The map() method creates a new array with the results of calling a function for every array element.
+          </p>
+          <pre class="fragment">
+            <code class="javascript" data-trim>
+              const numbers = [1, 2, 3, 4, 5];
+              const doubled = numbers.map((number) => {
+                return number * 2;
+              });
+              console.log(doubled);
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>fileter( )</h2>
+          <p>
+            The filter() method creates a new array with all elements that
+            pass the test implemented by the provided function.
+          </p>
+          <pre class="fragment">
+            <code class="javascript" data-trim>
+              const numbers = [1, 2, 3, 4, 5];
+              const evenNumbers = numbers.filter((number) => {
+                return number % 2 === 0;
+              });
+              console.log(evenNumbers);
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>find( )</h2>
+          <p>
+            The find() method returns the first element that satisfies the provided testing function.
+          </p>
+          <pre class="fragment">
+            <code class="javascript" data-trim>
+              const numbers = [1, 2, 3, 4, 5];
+              const found = numbers.find((number) => {
+                return number > 3;
+              });
+              console.log(found);
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>ES6 Enhancements</h2>
+          <ul class="fragment">
+            <li class="fragment">Arrow functions</li>
+            <li class="fragment">Template literals</li>
+            <li class="fragment">Destructuring assignment</li>
+            <li class="fragment">Spread and rest operators</li>
+            <li class="fragment">Default parameters</li>
+            <li class="fragment">Promises and async/await</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Arrow Functions</h2>
+          <p>
+            Shorter syntax for writing functions. The syntax is a little similiar to Lambda expressions in other languages such as C# and Python.
+          </p>
+          <pre class="fragment">
+            <code class="javascript " data-trim>
+              // Regular function
+              const add = function (a, b) {
+                return a + b;
+              }
+
+              // Arrow function
+              const square = (x) => x * x;
+              console.log(square(4)); // 16
+
+              // () is optional if there is only one parameter
+              const numbers = [1, 2, 3, 4, 5];
+              
+              forEach(number => {
+                console.log(number);
+              });
+            </code> 
+          </pre>
+        </section>
+
+        <section>
+          <h2>Template Literals</h2>
+          <p>
+            Template literals are string literals that allow embedded
+            expressions. You can use multi-line strings and string interpolation features with them.
+          </p>
+          <pre class="fragment">
+            <code class="javascript" data-trim>
+              const name = "Alice";
+              const greeting = `Hello, ${name}!`;
+              console.log(greeting); // Hello, Alice!
+            </code>
+          </pre>
+
+          <pre class="fragment">
+            <code class="javascript" data-trim>
+              function greet(gender, name) {
+                return `Hello ${gender === "M" ? "Mr. " : "Ms. "} ${name}`;
+              }
+
+              console.log(greet("M", "Smith")); // Hello Mr. Smith
+              console.log(greet("F", "Molly")); // Hello Ms. Molly
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>Destructuring Assignment</h2>
+          <p>
+            Destructuring assignment is a syntax that allows unpacking values
+            from arrays or properties from objects into distinct variables.
+          </p>
+          <pre class="fragment">
+            <code class="javascript" data-trim>
+              const person = {
+                name: "Alice",
+                age: 25,
+                city: "New York"
+              };
+
+              const { name, age } = person;
+              console.log(name); // Alice
+              console.log(age); // 25
+
+              // Renaming variables
+              const { name: firstName, age: years } = person;
+              console.log(firstName); // Alice
+              console.log(years); // 25
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>Spread and Rest Operators</h2>
+          <h5>Spread Operator</h5>
+          <p>
+            The spread operator (...) allows an iterable such as an array to
+            be expanded in places where zero or more arguments are expected. (Expanding)
+          </p>
+          <pre class="fragment">
+            <code class="javascript " data-trim>
+              const numbers = [1, 2, 3];
+              const newNumbers = [...numbers, 4, 5];
+              console.log(newNumbers); // [1, 2, 3, 4, 5]
+
+              const person = {
+                name: "Alice",
+                age: 25
+              };
+
+              const newPerson = { ...person, city: "New York" };
+              console.log(newPerson); // { name: "Alice", age: 25, city: "New York" }
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>Spread and Rest Operators</h2>
+          <h5>Rest Operator</h5>
+          <p>
+            The rest operator (...) allows us to represent an indefinite number of arguments as an array. (Collecting)
+          </p>
+          <pre class="fragment">
+            <code class="javascript" data-trim>
+              function sum(...numbers) {
+                return numbers.reduce((acc, num) => acc + num, 0);
+              }
+
+              console.log(sum(1, 2, 3)); // 6
+              console.log(sum(1, 2, 3, 4, 5)); // 15
+              console.log(sum(1, 2, 3, 4, 5, 6)); // 21
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>Default Parameters</h2>
+          <p>
+            Default parameters allow named parameters to be initialized with
+            default values if no value or undefined is passed.
+          </p>
+          <pre class="fragment">
+            <code class="javascript" data-trim>
+              function multiply(a, b = 1) {
+                return a * b;
+              }
+
+              console.log(multiply(5)); // 5
+              console.log(multiply(5, 2)); // 10
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>Promises and async/await</h2>
+          <p>
+            Promises are used to handle asynchronous operations in JavaScript.
+            The async/await syntax makes it easier to work with promises.
+          </p>
+          <pre class="fragment">
+            <code class="javascript" data-trim>
+              fetch("https://jsonplaceholder.typicode.com/photos")
+                .then(response => {
+                  if (!response.ok) {
+                    throw new Error("Network response was not OK");
+                  }
+                  return response.json();
+                })
+                .then(data => {
+                  console.log("Data loaded with Promise:");
+                  console.log(data.slice(0, 5)); // Show first 5 items
+                })
+                .catch(error => {
+                  console.error("There was a problem with the fetch operation:", error);
+                });
+
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>Promises and async/await</h2>
+          <p>
+            The async/await syntax makes it easier to work with promises.
+          </p>
+          <pre class="fragment">
+            <code class="javascript" data-trim>
+              async function fetchData() {
+                try {
+                  const response = await fetch("https://jsonplaceholder.typicode.com/photos");
+                  if (!response.ok) {
+                    throw new Error("Network response was not OK");
+                  }
+                  const data = await response.json();
+                  console.log("Data loaded with async/await:");
+                  console.log(data.slice(0, 5)); // Show first 5 items
+                } catch (error) {
+                  console.error("There was a problem with the fetch operation:", error);
+                }
+              }
+
+              fetchData();
+            </code>
+          </pre>
+        </section>
+
+        <section>
+          <h2>Conclusion</h2>
+          <p>
+            JavaScript is a powerful and versatile language. It is widely used
+            for web development and has a large ecosystem of libraries and
+            frameworks.
+          </p>
+          <p>
+            In this lesson, we covered the basics of JavaScript, including
+            variable declaration, data types, functions, objects, arrays, and
+            ES6 enhancements.
+          </p>
+        </section>
+
+
+      </div>
+    </div>
+
+    <script src="../dist/reveal.js"></script>
+    <script src="../plugin/notes/notes.js"></script>
+    <script src="../plugin/markdown/markdown.js"></script>
+    <script src="../plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
+</html>

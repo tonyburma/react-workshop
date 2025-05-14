@@ -13,6 +13,18 @@
   text-align: left;
 }
 
+.reveal section ul {
+  text-align: left;
+  margin-left: 0;
+  padding-left: 2rem;
+}
+
+.reveal section ol {
+  text-align: left;
+  margin-left: 0;
+  padding-left: 2rem;
+}
+
 .reveal section h5 {
   color: rgb(31, 24, 80);
 
