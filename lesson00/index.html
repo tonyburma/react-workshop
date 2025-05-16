@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>Lesson 00 - Pre-requisite</title>
+
+    <link rel="stylesheet" href="../dist/reset.css" />
+    <link rel="stylesheet" href="../dist/reveal.css" />
+    <link rel="stylesheet" href="../dist/theme/sky.css" />
+    <link rel="stylesheet" href="../custom.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../plugin/highlight/monokai.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <div class="title-slide">
+            <h1>HTML and CSS</h1>
+          </div>
+        </section>
+
+        <section>
+          <h2>Structure of HTML Document</h2>
+          <ul>
+            <li class="fragment">&lt;!DOCTYPE html&gt;</li>
+            <li class="fragment">&lt;html lang="en"&gt;</li>
+            <li class="fragment">&lt;head&gt;</li>
+            <li class="fragment">&lt;body&gt;</li>
+          </ul>
+          <p class="fragment">
+            The &lt;!DOCTYPE html&gt; declaration defines the document type and
+            version of HTML being used. The &lt;html&gt; element is the root
+            element of an HTML page, and the lang attribute specifies the
+            language of the document.
+          </p>
+          <p class="fragment">
+            The &lt;head&gt; element contains meta-information about the
+            document, such as the title and links to stylesheets. The
+            &lt;body&gt; element contains the content of the document that is
+            displayed in the browser.
+          </p>
+        </section>
+
+        <section>
+          <h2>HTML Document</h2>
+          <pre>
+            <code class="language-html" data-trim>
+              &lt;!DOCTYPE html&gt;
+              &lt;html lang="en"&gt;
+                &lt;head&gt;
+                  &lt;meta charset="UTF-8"&gt;
+                  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                  &lt;title&gt;Document&lt;/title&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+                  &lt;h1&gt;Hello World&lt;/h1&gt;
+                &lt;/body&gt;
+              &lt;/html&gt;
+            </code>
+          </pre>
+          <p class="fragment">
+            The &lt;meta&gt; tag with the charset attribute specifies the
+            character encoding for the HTML document. The &lt;title&gt; tag
+            defines the title of the document, which is displayed in the browser
+            tab.
+          </p>
+          <p class="fragment">
+            The &lt;h1&gt; tag defines the main heading of the document. The
+            content inside the &lt;body&gt; tag is what is displayed in the
+            browser.
+          </p>
+        </section>
+
+        <section>
+          <h2>Commonly used Tags</h2>
+          <ul>
+            <li class="fragment">&lt;h1&gt; - Main heading</li>
+            <li class="fragment">&lt;h2&gt; - Subheading</li>
+            <li class="fragment">&lt;p&gt; - Paragraph</li>
+            <li class="fragment">&lt;div&gt; - Division</li>
+            <li class="fragment">&lt;span&gt; - Inline container</li>
+            <li class="fragment">&lt;a&gt; - Anchor (link)</li>
+            <li class="fragment">&lt;img&gt; - Image</li>
+            <li class="fragment">&lt;ul&gt; - Unordered list</li>
+            <li class="fragment">&lt;ol&gt; - Ordered list</li>
+            <li class="fragment">&lt;li&gt; - List item</li>
+            <li class="fragment">&lt;code&gt; - Code snippet</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>CSS Basics</h2>
+          <ul>
+            <li class="fragment">Selectors</li>
+            <li class="fragment">Properties</li>
+            <li class="fragment">Values</li>
+          </ul>
+          <p class="fragment">
+            CSS (Cascading Style Sheets) is used to style HTML documents. It
+            allows you to apply styles to elements based on their selectors,
+            such as class, ID, or element type.
+          </p>
+          <p class="fragment">
+            CSS properties define the styles to be applied, such as color,
+            font-size, margin, padding, etc. Values specify the specific style
+            to be applied to the property.
+          </p>
+        </section>
+
+        <section>
+          <h2>CSS Example</h2>
+          <pre>
+            <code class="language-css" data-trim>
+              body {
+                background-color: "red";
+                font-family: Arial, sans-serif;
+              }
+              h1 {
+                color: #333;
+              }
+            </code>
+          </pre>
+          <p class="fragment">
+            In this example, the body element has a "red" background color and
+            uses the Arial font. The h1 element has a dark gray text color.
+          </p>
+          <p class="fragment">
+            CSS can be included in HTML documents using the &lt;style&gt; tag in
+            the &lt;head&gt; section or by linking to an external CSS file using
+            the &lt;link&gt; tag.
+          </p>
+          <pre>
+            <code class="language-html" data-trim>
+              &lt;link rel="stylesheet" href="styles.css"&gt;
+            </code> 
+          </pre>
+        </section>
+
+        <section>
+          <h2>Popular CSS Frameworks</h2>
+          <ul>
+            <li class="fragment">Bootstrap</li>
+            <li class="fragment">
+              <span style="color: red">Tailwind CSS</span>
+            </li>
+            <li class="fragment">Bulma</li>
+            <li class="fragment">Foundation</li>
+          </ul>
+        </section>
+
+        <!-- END of Slides -->
+      </div>
+    </div>
+
+    <script src="../dist/reveal.js"></script>
+    <script src="../plugin/notes/notes.js"></script>
+    <script src="../plugin/markdown/markdown.js"></script>
+    <script src="../plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
+</html>

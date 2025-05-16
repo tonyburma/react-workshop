@@ -149,15 +149,10 @@
           <pre class="fragment">
             <code class="javascript" data-trim>
               1 + true; // 2
-
               1 + "1"; // "11"
-
               console.log("2" == 2); // true
-
               1 / "10"; // 0.1
-
               "10" * "2"; // 20
-
               10 * 'a'; // NaN
             </code>
           </pre>
@@ -195,7 +190,6 @@
               function add(a, b) {
                 return a + b;
               }
-
               let sum = add(2, 3);
               console.log(sum); // 5
 
@@ -331,12 +325,34 @@
         <section>
           <h2>Add Items to Arrays</h2>
           <ul class="fragment">
-            <li class="fragment">push() - add to the end</li>
-            <li class="fragment">unshift() - add to the beginning</li>
-            <li class="fragment">splice() - add at a specific index</li>
+            <li class="fragment">push( ) - add to the end</li>
+            <li class="fragment">unshift( ) - add to the beginning</li>
+            <li class="fragment">splice( ) - add at a specific index</li>
             <li class="fragment">concat() - merge two arrays</li>
             <li class="fragment">spread operator - merge two arrays</li>
           </ul>
+          <pre style="margin-top: 1em;" class="fragment">
+            <code class="javascript" data-trim>
+              const arr = [1, 2, 3];
+              arr.push(4);
+              console.log(arr); // [1, 2, 3, 4]
+            </code>
+          </pre>
+          <pre style="margin-top: 1em;" class="fragment">
+            <code class="javascript" data-trim>
+              const arr = [1, 2, 3];
+              arr.unshift(4);
+              console.log(arr); // [4, 1, 2, 3]
+            </code>
+          </pre>
+          <pre style="margin-top: 1em;" class="fragment">
+            <code class="javascript" data-trim>
+              const arr1 = [1,2,3 ];
+              const arr2 = [4,5,6];
+              const arr3 = [...arr1, 100]
+              console.log(arr3); // [1, 2, 3, 100]
+            </code>
+          </pre>
         </section>
 
         <section>
