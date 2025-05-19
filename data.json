@@ -1,0 +1,25 @@
+{
+  "courses": [
+    {
+      "trainingProviderUen": "198902296M",
+      "courseReferenceNumber": "TGS-2024048745"
+    }
+  ],
+  "applicant": {
+    "sme": "N",
+    "nric": "S7063908D",
+    "nricType": "SB",
+    "employerSponsored": "N"
+  },
+  "course": {
+    "referenceNumber": "TGS-2024048745",
+    "startDate": "2025-06-15"
+  },
+  "trainee": {
+    "idType": "NRIC",
+    "id": "S7063908D",
+    "dateOfBirth": "1970-12-26",
+    "sponsoringEmployerUen": "",
+    "modularisedSCTPBundleCourseStartDate": "2024-04-15"
+  }
+}
